@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE KDevPrjSession>
+<KDevPrjSession>
+ <DocsAndViews NumberOfDocuments="17" >
+  <Doc0 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmix.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc0>
+  <Doc1 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixerwidget.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc1>
+  <Doc2 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixctrl.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc2>
+  <Doc3 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmix.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc3>
+  <Doc4 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kledbutton.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc4>
+  <Doc5 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kledbutton.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc5>
+  <Doc6 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixdockwidget.h" >
+   <View0 Encoding="UTF-8" line="40" Type="Source" />
+  </Doc6>
+  <Doc7 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/mdwswitch.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc7>
+  <Doc8 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/mdwslider.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc8>
+  <Doc9 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixdockwidget.cpp" >
+   <View0 Encoding="UTF-8" line="207" Type="Source" />
+  </Doc9>
+  <Doc10 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixapplet.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc10>
+  <Doc11 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/kmixapplet.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc11>
+  <Doc12 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/main.cpp" >
+   <View0 Encoding="" Type="Source" />
+  </Doc12>
+  <Doc13 NumberOfViews="1" URL="file:///home/rainman/projects/kde/kdemultimedia/kmix/KMixApp.h" >
+   <View0 Encoding="" Type="Source" />
+  </Doc13>
+  <Doc14 NumberOfViews="1" URL="file:///usr/kde/git/include/ksystemtray.h" >
+   <View0 Encoding="UTF-8" Type="Source" />
+  </Doc14>
+  <Doc15 NumberOfViews="1" URL="file:///usr/qt/3/include/qpixmap.h" >
+   <View0 Encoding="UTF-8" Type="Source" />
+  </Doc15>
+  <Doc16 NumberOfViews="1" URL="file:///usr/qt/3/include/qlabel.h" >
+   <View0 Encoding="UTF-8" line="88" Type="Source" />
+  </Doc16>
+ </DocsAndViews>
+ <pluginList>
+  <kdevdebugger>
+   <breakpointList/>
+   <showInternalCommands value="0" />
+  </kdevdebugger>
+  <kdevastyle>
+   <AStyle FStyle="GLOBAL" />
+  </kdevastyle>
+  <kdevbookmarks>
+   <bookmarks/>
+  </kdevbookmarks>
+  <kdevvalgrind>
+   <executable path="" params="" />
+   <valgrind path="" params="" />
+   <calltree path="" params="" />
+   <kcachegrind path="" />
+  </kdevvalgrind>
+ </pluginList>
+</KDevPrjSession>
