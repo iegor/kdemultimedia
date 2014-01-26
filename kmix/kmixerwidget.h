@@ -56,63 +56,63 @@ class ViewGrid;
 class ViewSurround;
 
 
-class KMixerWidget : public QWidget  
+class KMixerWidget : public QWidget
 {
-   Q_OBJECT
+		Q_OBJECT
 
-  public:
-   KMixerWidget( int _id, Mixer *mixer, const QString &mixerName,
-                 MixDevice::DeviceCategory categoryMask = MixDevice::ALL ,
-                 QWidget *parent=0, const char *name=0, ViewBase::ViewFlags vflags=0 );
-   ~KMixerWidget();
-	
-   enum KMixerWidgetIO { OUTPUT=0, INPUT };
+	public:
+		KMixerWidget ( int _id, Mixer *mixer, const QString &mixerName,
+		               MixDevice::DeviceCategory categoryMask = MixDevice::ALL ,
+		               QWidget *parent=0, const char *name=0, ViewBase::ViewFlags vflags=0 );
+		~KMixerWidget();
 
-   const Mixer *mixer() const { return _mixer; };
+		enum KMixerWidgetIO { OUTPUT=0, INPUT };
 
-  int id() const { return m_id; };
+		const Mixer *mixer() const { return _mixer; };
 
-   KActionCollection* getActionCollection() const { return 0; /* m_actions; */ }
-	
-  signals:
-   void masterMuted( bool );
-   void newMasterVolume(Volume vol);
-   void toggleMenuBar();
+		int id() const { return m_id; };
 
-  public slots:
-   void setTicks( bool on );
-   void setLabels( bool on );
-   void setIcons( bool on );
-   void setValueStyle( int vs );
-   void toggleMenuBarSlot();
+		KActionCollection* getActionCollection() const { return 0; /* m_actions; */ }
 
-   void saveConfig( KConfig *config, const QString &grp );
-   void loadConfig( KConfig *config, const QString &grp );
+	signals:
+		void masterMuted ( bool );
+		void newMasterVolume ( Volume vol );
+		void toggleMenuBar();
 
-  private slots:
-      //void updateBalance();
-      void balanceChanged(int balance);
+	public slots:
+		void setTicks ( bool on );
+		void setLabels ( bool on );
+		void setIcons ( bool on );
+		void setValueStyle ( int vs );
+		void toggleMenuBarSlot();
 
-  private:
-   Mixer *_mixer;
-   QSlider *m_balanceSlider;
-   QVBoxLayout *m_topLayout; // contains the Card selector, TabWidget and balance slider
+		void saveConfig ( KConfig *config, const QString &grp );
+		void loadConfig ( KConfig *config, const QString &grp );
 
-   KTabWidget* m_ioTab;
+	private slots:
+		//void updateBalance();
+		void balanceChanged ( int balance );
 
-	std::vector<ViewBase*> _views;
-   int m_id;
+	private:
+		Mixer *_mixer;
+		QSlider *m_balanceSlider;
+		QVBoxLayout *m_topLayout; // contains the Card selector, TabWidget and balance slider
 
-   KActionMenu *m_toggleMixerChannels;
+		KTabWidget* m_ioTab;
 
-   bool _iconsEnabled;
-   bool _labelsEnabled;
-   bool _ticksEnabled;
-   int _valueStyle;
-   MixDevice::DeviceCategory m_categoryMask;
+		std::vector<ViewBase*> _views;
+		int m_id;
 
-   void createLayout(ViewBase::ViewFlags vflags);
-   void possiblyAddView(ViewBase* vbase);
+		KActionMenu *m_toggleMixerChannels;
+
+		bool _iconsEnabled;
+		bool _labelsEnabled;
+		bool _ticksEnabled;
+		int _valueStyle;
+		MixDevice::DeviceCategory m_categoryMask;
+
+		void createLayout ( ViewBase::ViewFlags vflags );
+		void possiblyAddView ( ViewBase* vbase );
 };
 
 #endif

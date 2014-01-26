@@ -1,3 +1,4 @@
+//kate: space-indent on; tab-width 2; indent-width 2; indent-mode cstyle; encoding UTF-8;
 /*
  * KMix -- KDE's full featured mini mixer
  *
@@ -38,45 +39,46 @@ class ViewDockAreaPopup;
 class Volume;
 
 class KMixDockWidget : public KSystemTray  {
-   Q_OBJECT
+  Q_OBJECT
 
-   friend class KMixWindow;
+  friend class KMixWindow;
 
- public:
-   KMixDockWidget(Mixer *, QWidget *parent=0, const char *name=0, bool volumePopup=true);
-   ~KMixDockWidget();
+public:
+  KMixDockWidget(Mixer *, QWidget *parent=0, const char *name=0, bool volumePopup=true);
+  ~KMixDockWidget();
 
-   void setErrorPixmap();
-   void ignoreNextEvent();
-   ViewDockAreaPopup* getDockAreaPopup();
+  void setErrorPixmap();
+  void ignoreNextEvent();
+  ViewDockAreaPopup* getDockAreaPopup();
 
-   Mixer *m_mixer;
-   ViewDockAreaPopup *_dockAreaPopup;
-   KAudioPlayer *_audioPlayer;
+  Mixer *m_mixer;
+  ViewDockAreaPopup *_dockAreaPopup;
+  KAudioPlayer *_audioPlayer;
 
- public slots:
-   void setVolumeTip();
-   void updatePixmap();
+public slots:
+  void setVolumeTip();
+  void updatePixmap();
 
- protected:
-   void createMasterVolWidget();
-   void createActions();
-   void mousePressEvent(QMouseEvent *);
-   void mouseReleaseEvent(QMouseEvent *);
-   void wheelEvent(QWheelEvent *);
-   void contextMenuAboutToShow( KPopupMenu* menu );
-   void toggleMinimizeRestore();
+protected:
+  void createMasterVolWidget();
+  void createActions();
+  void mousePressEvent(QMouseEvent *);
+  void mouseReleaseEvent(QMouseEvent *);
+  void wheelEvent(QWheelEvent *);
+  void contextMenuAboutToShow(KPopupMenu* menu);
+  void toggleMinimizeRestore();
 
- private:
-   bool _playBeepOnVolumeChange;
-   bool _ignoreNextEvent;
-   int  _oldToolTipValue;
-   char _oldPixmapType;
-   bool _volumePopup;
- private slots:
-   void dockMute();
-   void selectMaster();
-   void handleNewMaster(int soundcard_id, QString& channel_id);
+private:
+  bool _playBeepOnVolumeChange;
+  bool _ignoreNextEvent;
+  int  _oldToolTipValue;
+  char _oldPixmapType;
+  bool _volumePopup;
+
+private slots:
+  void dockMute();
+  void selectMaster();
+  void handleNewMaster(int soundcard_id, QString& channel_id);
 };
 
 #endif
