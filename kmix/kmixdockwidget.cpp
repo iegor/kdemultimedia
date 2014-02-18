@@ -71,6 +71,8 @@ KMixDockWidget::KMixDockWidget(Mixer *mixer, QWidget *parent, const char *name, 
   createActions();
   createMasterVolWidget();
   connect(this, SIGNAL(quitSelected()), kapp, SLOT(quitExtended()));
+
+  setAutoResize(true);
 }
 
 KMixDockWidget::~KMixDockWidget() {
@@ -219,6 +221,7 @@ void KMixDockWidget::updatePixmap() {
       case 'm': setPixmap(loadIcon("kmixdocked_mute")); break;
       case 'd': setPixmap(loadIcon("kmixdocked")); break;
     }
+    // pixmap()->resize(width(), height());
   }
 
   _oldPixmapType = newPixmapType;
