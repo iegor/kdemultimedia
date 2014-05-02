@@ -1,0 +1,76 @@
+#MIN_CONFIG(3.3)
+CXXFLAGS="$CXXFLAGS $KDE_DEFAULT_CXXFLAGS"
+
+if test "$build_arts" = "yes"; then
+    AC_DEFINE(USE_ARTS, 1, [If we use arts volume])
+    LIB_ARTS="-lartskde"
+    AC_SUBST(LIB_ARTS)
+fi
+
+KDE_INIT_DOXYGEN([The API Reference], [Version $VERSION])
+
+
+AC_ARG_WITH([xinit-workaround],
+  [AS_HELP_STRING([--with-xinit-workaround],
+    [use this flag if Kaffeine hangs at startup and you are using XFree86 4.4 or X.Org 6.7.0])],,
+  [with_xinit_workaround=no])
+
+if test "$with_xinit_workaround" = "yes" ; then
+	AC_DEFINE([XINIT_WKRND],,[workaround buggy X server])
+fi
+
+dnl ------------------------
+dnl check for DPMS extension
+dnl ------------------------
+
+AC_ARG_WITH([dpms], [AS_HELP_STRING([--without-dpms], [build without DPMS support])],,
+  [with_dpms=yes])
+
+CFLAGS_DPMS=""
+LIB_DPMS=""
+
+if test "$with_dpms" != "no" ; then
+	AC_MSG_CHECKING([for DPMS extension])
+
+	if "$PKG_CONFIG" --exists xext ; then
+		with_dpms=yes
+		CFLAGS_DPMS=`"$PKG_CONFIG" --cflags xext`
+		LIB_DPMS=`"$PKG_CONFIG" --libs xext`
+		AC_DEFINE([HAVE_DPMS],,[DPMS extension available])
+		AC_MSG_RESULT([yes])
+	else
+		with_dpms=no
+		AC_MSG_RESULT([no])
+	fi
+fi
+
+AC_SUBST([CFLAGS_DPMS])
+AC_SUBST([LIB_DPMS])
+
+dnl -------------------------
+dnl check for XTest extension
+dnl -------------------------
+
+AC_ARG_WITH([xtest], [AS_HELP_STRING([--without-xtest], [build without XTest support])],,
+  [with_xtest=yes])
+
+CFLAGS_XTEST=""
+LIB_XTEST=""
+
+if test "$with_xtest" != "no" ; then
+	AC_MSG_CHECKING([for XTest extension])
+
+	if "$PKG_CONFIG" --exists xtst ; then
+		with_xtest=yes
+		CFLAGS_XTEST=`"$PKG_CONFIG" --cflags xtst`
+		LIB_XTEST=`"$PKG_CONFIG" --libs xtst`
+		AC_DEFINE([HAVE_XTEST],,[XTest extension available])
+		AC_MSG_RESULT([yes])
+	else
+		with_xtest=no
+		AC_MSG_RESULT([no])
+	fi
+fi
+
+AC_SUBST([CFLAGS_XTEST])
+AC_SUBST([LIB_XTEST])
